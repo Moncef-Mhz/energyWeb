@@ -1,0 +1,62 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+---
+
+<div class="w-full overflow-hidden pb-10 px-10 relative">
+  <div
+    class="w-full rounded-4xl overflow-hidden relative h-[calc(100vh-80px)] box"
+  >
+    <div
+      class="asbolute bg-black/20 w-full h-full justify-center p-20 gap-10 flex flex-col"
+    >
+      <p class="text-lg tracking-wide font-normal text-white/80">
+        #1 Energy provider in the world
+      </p>
+      <h1 class="text-white tracking-wide text-9xl leading-tight font-semibold">
+        New Energy <br /> for the Future
+      </h1>
+      <div class="flex items-center gap-8">
+        <button
+          class="py-3 cursor-pointer border-b text-white font-normal flex gap-2"
+          >Get in touch <ArrowUpRight /></button
+        >
+        <button
+          class="py-3 cursor-pointer border-b text-white font-normal flex gap-2"
+          >Our services <ArrowUpRight /></button
+        >
+      </div>
+    </div>
+
+    <!-- <div
+      class="absolute w-full h-[calc(100%-250px)] z-20 flex items-center right-0 top-0"
+    >
+      <div class="w-[250px] mr-40 h-[350px] absolute right-0">
+        <div
+          class="backdrop-blur-xs rounded-xl blur-xs bg-white/20 w-full h-full"
+        >
+        </div>
+      </div>
+    </div> -->
+
+    <div
+      class="absolute bg-white rounded-tl-4xl w-[800px] h-[250px] bottom-0 right-0 container"
+    >
+      <div class="p-10 flex items-center gap-5 justify-between h-full">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-6xl font-semibold">6 mil</h1>
+          <p class="text-gray-600">The company's annaul <br /> net income</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h1 class="text-6xl font-semibold">315</h1>
+          <p class="text-gray-600">Projects completed <br /> worldwide</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h1 class="text-6xl font-semibold">120k</h1>
+          <p class="text-gray-600">
+            Employees work in all <br /> parts of the world
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

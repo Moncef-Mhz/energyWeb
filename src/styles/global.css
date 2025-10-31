@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+
+.button {
+    @apply py-2 px-5 border rounded-full cursor-pointer;
+}
+
+.box {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1675116731363-c17d957f3444?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870');
+    background-size: cover;
+    background-position: center;
+}
+
+.container::after,
+.container::before {
+    content: '';
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background: radial-gradient(circle 32px at top left, #00000000 98%, #fff) top left;
+}
+
+.container::before {
+    top: -32px;
+    right: 0;
+
+}
+
+.container::after {
+    bottom: 0px;
+    left: -32px;
+}
