@@ -1,51 +1,55 @@
 ---
-const company = [
+import { ArrowUpRight } from "@lucide/astro";
+
+const items = [
   {
-    name: "Headspace",
-    image: "https://cdn.worldvectorlogo.com/logos/movie-pilot.svg",
+    title: "Solar panels for home",
   },
   {
-    name: "Orange Business Services",
-    image: "https://cdn.worldvectorlogo.com/logos/orange-3.svg",
+    title: "Solar panels for industry",
   },
   {
-    name: "Medtronic",
-    image: "https://cdn.worldvectorlogo.com/logos/medtronic-3.svg",
+    title: "Solar panels for chargers",
   },
   {
-    name: "Tesla",
-    image: "https://cdn.worldvectorlogo.com/logos/tesla-pure.svg",
-  },
-  {
-    name: "Lithia",
-    image: "https://cdn.worldvectorlogo.com/logos/sunlight-2.svg",
+    title: "Wind power generator",
   },
 ];
 ---
 
-<section class="w-full h-full flex flex-col gap-20 py-24 px-40">
-  <div class="flex items-center justify-between gap-20">
-    <h1 class="text-6xl w-2/4 leading-tight font-medium text-black">
-      Focusing on quality,<span class="text-gray-400">
-        we maintian customer trust</span
-      >
-    </h1>
-    <p class="text-xl text-gray-600 w-[38%]">
-      We ensure that every installation we build has strict quality checks.
-      Sunstainbale solution for an environmentally friendly and renewable future
-    </p>
+<section
+  class="bg-white w-full h-[calc(100vh+250px)] grid grid-cols-2 px-40 py-40 gap-20"
+>
+  <div class="flex flex-col items-center justify-between">
+    <div class="space-y-8">
+      <h1 class="text-6xl leading-tight font-medium text-black">
+        Trusted service,<span class="text-gray-400">
+          for your various needs</span
+        >
+      </h1>
+      <button
+        class="button2 font-medium text-lg flex gap-2 items-center border-green-500 bg-green-500 text-white"
+        >Get in touch <ArrowUpRight />
+      </button>
+    </div>
+    <div class="grid grid-cols-2 w-full gap-7">
+      {
+        items.map((item, index) => (
+          <div class="rounded-xl border border-gray-300 flex gap-5 justify-between p-8 flex-col">
+            <h2 class="text-gray-400 text-xl">
+              {index < 10 ? `0${index + 1}` : index + 1}
+            </h2>
+            <h1 class="text-3xl font-medium">{item.title}</h1>
+            <span class="text-lg underline cursor-pointer">View details</span>
+          </div>
+        ))
+      }
+    </div>
   </div>
-  <div class="flex items-center w-full">
-    {
-      company.map((item) => (
-        <div class=" bg-gray-100 border-gray-300 border cursor-pointer group hover:bg-white duration-300 w-full rounded-full aspect-square flex items-center  justify-center ">
-          <img
-            src={item.image}
-            alt={item.name}
-            class="mx-auto grayscale mix-blend-multiply  group-hover:grayscale-0 duration-300  aspect-square w-20 h-20  "
-          />
-        </div>
-      ))
-    }
+  <div class="w-full h-full overflow-hidden bg-amber-100 rounded-2xl">
+    <img
+      class="w-full h-full object-cover"
+      src="https://plus.unsplash.com/premium_photo-1682148222948-573d04d11875?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=686"
+    />
   </div>
 </section>

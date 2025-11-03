@@ -1,5 +1,12 @@
 ---
-import { Layers } from "@lucide/astro";
+import {
+  BookOpenText,
+  CheckCheck,
+  Layers,
+  MessageCircle,
+  Package,
+  Smartphone,
+} from "@lucide/astro";
 
 const featuresItems = [
   {
@@ -11,31 +18,31 @@ const featuresItems = [
   {
     title: "Quality control of each part",
     description: "Every unit you send is checked carefully for every detail.",
-    icon: "",
+    icon: CheckCheck,
   },
   {
     title: "Relaible customer service",
     description:
       "our customer service is available 24/7 to help you with any issues.",
-    icon: "",
+    icon: MessageCircle,
   },
   {
     title: "Maintenance manual book",
     description:
       "We provide a guidebook that can be used to ensure maximum care.",
-    icon: "",
+    icon: BookOpenText,
   },
   {
     title: "Delivered safely",
     description:
       "Every unit we send arrives safely and quickly, without any obstacles or drama.",
-    icon: "",
+    icon: Package,
   },
   {
     title: "Based on artificial intelligence",
     description:
       "You can control and view each unit from your phone, its very easy to use.",
-    icon: "",
+    icon: Smartphone,
   },
 ];
 ---
@@ -53,12 +60,18 @@ const featuresItems = [
   >
     {
       featuresItems.map((item) => (
-        <div class="flex outline-1 outline-gray-300 flex-col gap-6 bg-white p-8">
-          <div class="w-16 h-16 bg-gray-300 rounded-full flex items-center justify-center">
-            {item.icon ? <item.icon /> : null}
+        <div class="flex outline-1 outline-gray-300 flex-col gap-6 bg-white p-10 pr-14">
+          <div class="w-16 h-16 bg-white drop-shadow-2xl  rounded-lg flex items-center justify-center">
+            <div class="p-3 bg-green-600 rounded-full">
+              {item.icon ? <item.icon class="size-6 text-white" /> : null}
+            </div>
           </div>
-          <h2 class="text-2xl font-semibold text-black">{item.title}</h2>
-          <p class="text-gray-600">{item.description}</p>
+          <h2 class="text-2xl font-semibold tracking-wide text-black">
+            {item.title}
+          </h2>
+          <p class="text-gray-600 text-base tracking-wide leading-snug">
+            {item.description}
+          </p>
         </div>
       ))
     }

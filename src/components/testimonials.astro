@@ -1,0 +1,51 @@
+---
+const company = [
+  {
+    name: "Headspace",
+    image: "https://cdn.worldvectorlogo.com/logos/movie-pilot.svg",
+  },
+  {
+    name: "Orange Business Services",
+    image: "https://cdn.worldvectorlogo.com/logos/orange-3.svg",
+  },
+  {
+    name: "Medtronic",
+    image: "https://cdn.worldvectorlogo.com/logos/medtronic-3.svg",
+  },
+  {
+    name: "Tesla",
+    image: "https://cdn.worldvectorlogo.com/logos/tesla-pure.svg",
+  },
+  {
+    name: "Lithia",
+    image: "https://cdn.worldvectorlogo.com/logos/sunlight-2.svg",
+  },
+];
+---
+
+<section class="w-full h-full flex flex-col gap-20 py-24 px-40">
+  <div class="flex items-center justify-between gap-20">
+    <h1 class="text-6xl w-2/4 leading-tight font-medium text-black">
+      Focusing on quality,<span class="text-gray-400">
+        we maintian customer trust</span
+      >
+    </h1>
+    <p class="text-xl text-gray-600 w-[38%]">
+      We ensure that every installation we build has strict quality checks.
+      Sunstainbale solution for an environmentally friendly and renewable future
+    </p>
+  </div>
+  <div class="flex items-center w-full">
+    {
+      company.map((item) => (
+        <div class=" bg-gray-100 border-gray-300 border cursor-pointer group hover:bg-white duration-300 w-full rounded-full aspect-square flex items-center  justify-center ">
+          <img
+            src={item.image}
+            alt={item.name}
+            class="mx-auto grayscale mix-blend-multiply  group-hover:grayscale-0 duration-300  aspect-square w-20 h-20  "
+          />
+        </div>
+      ))
+    }
+  </div>
+</section>
